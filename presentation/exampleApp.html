@@ -1,0 +1,16 @@
+<RootComponent>
+    <Title>Super Mention's side-app</Title>
+    <Username username={{userData.username}} />
+    <Settings userData={{userData}} />
+</RootComponent>
+
+<Settings>
+    <UsernameChanger username={{userData.username}} />
+    <PasswordChanger password={{userData.whatDidYouExpect}} />
+    <EmailChanger email={{userData.email}} />
+</Settings>
+
+<UsernameChanger>
+    <input type="text" value="{{username}}" />
+    <button value="Save the change!" onclick="saveUsername" />
+</UsernameChanger>
