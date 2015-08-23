@@ -1,0 +1,36 @@
+var component = Ractive.extend({
+    isolated: true,
+    template: "#component",
+    data:{
+        text: ''
+    },
+    oninit: function () {
+        this.on('sendText', function (event) {
+            this.get('sendText')(this.get('text'))
+        });
+    }
+});
+
+var main = Ractive.extend({
+    template: "#template",
+    data:{
+        text: 'Mention',
+        handleNewUsername: function (text) {
+            this.set('text', text)
+        }
+    },
+    components: {
+        component: component
+    },
+});
+
+function bootstrap(el) {
+
+    new Ractive({
+        el: el,
+        template: "<main />",
+        components: {
+            main: main
+        },
+    });
+}

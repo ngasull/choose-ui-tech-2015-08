@@ -10,6 +10,7 @@ module.exports = function(data) {
             '<link href="http://fonts.googleapis.com/css?family=Lobster+Two:400,700" rel="stylesheet" type="text/css">',
             '<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">',
             '<link href="' + data.css + '" rel="stylesheet" type="text/css" />',
+            '<script src="http://cdn.ractivejs.org/latest/ractive.js"></script>',
           '</head>',
           '<body>',
             '<div id="root"></div>',

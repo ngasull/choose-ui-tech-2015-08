@@ -1,0 +1,11 @@
+<!-- Templates -->
+<script id="template" type="text/ractive">
+    <p>Welcome {{ text }}!</p>
+    <component text="[[ text ]]" />
+</script>
+
+<script id="component" type="text/ractive">
+    Change username:
+    <input type="text" value="{{ text }}" />
+    <input type="button" on-click="sendText" value="Change me" />
+</script>

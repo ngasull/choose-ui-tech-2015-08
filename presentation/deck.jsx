@@ -7,7 +7,7 @@ import {
 
 import preloader from "../src/utils/preloader";
 
-import Interactive from "./interactive";
+import RactiveDemo from "./ractive-demo.jsx";
 
 const images = {
   notAgain: require("./notAgain.gif"),
@@ -29,44 +29,6 @@ export default class extends React.Component {
                 Choosing the right V from MVC
             </Text>
         </Appear>
-    </Slide>
-
-    <Slide>
-        <Heading textColor="tertiary" size={5}>
-            A non exhautive selection of trendy UI technologies
-        </Heading>
-        <Layout>
-            <Fill>
-                <List margin="50px 0">
-                    <Appear fid="1">
-                        <ListItem>Backbone</ListItem>
-                        <ListItem>AngularJS</ListItem>
-                        <ListItem>Polymer</ListItem>
-                        <ListItem>Meteor</ListItem>
-                        <ListItem>Ember</ListItem>
-                    </Appear>
-                </List>
-            </Fill>
-            <Fill>
-                <List margin="50px 0">
-                    <Appear fid="2">
-                        <ListItem>
-                            and ... <Text textColor="tertiary">Re?act(ive)?</Text>
-                        </ListItem>
-                    </Appear>
-                </List>
-            </Fill>
-        </Layout>
-    </Slide>
-
-    <Slide transition={['zoom']} bgColor="black">
-        <Image src={images.notAgain.replace('/','')} margin="0px auto 40px" height="293px"/>
-    </Slide>
-
-    <Slide transition={['zoom', 'fade']} bgColor="black">
-        <Heading size={1} fit textColor="primary" textFont="secondary">
-            {"For good's sake !"}
-        </Heading>
     </Slide>
 
     <Slide>
@@ -212,8 +174,8 @@ export default class extends React.Component {
         </Appear>
     </Slide>
 
-    <Slide transition={['zoom']}>
-        <Heading size={3} textColor="red">But extremely dangerous</Heading>
+    <Slide transition={['zoom']} bgColor="red">
+        <Heading size={3} textColor="tertiary">But extremely dangerous</Heading>
         <Appear>
             <List textColor="tertiary">
                 <ListItem>May create auto bindings recursively to children, parents and thus possibly siblings</ListItem>
@@ -231,7 +193,7 @@ export default class extends React.Component {
         </Appear>
     </Slide>
 
-    <Slide bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+    <Slide bgColor="primary">
         <CodePane
             lang="html"
             source={require("raw!./exampleApp.html")}
@@ -241,6 +203,128 @@ export default class extends React.Component {
     <Slide transition={['zoom']}>
         <Heading size={3} textColor="tertiary">Keep stuff isolated</Heading>
         <Heading size={3} textColor="tertiary">Pass data explicitely!</Heading>
+    </Slide>
+
+    <Slide>
+        <Heading textColor="tertiary" size={5}>
+            A non exhautive selection of trendy UI technologies
+        </Heading>
+        <Layout>
+            <Fill>
+                <List margin="50px 0">
+                    <Appear fid="1">
+                        <ListItem>Backbone</ListItem>
+                        <ListItem>AngularJS</ListItem>
+                        <ListItem>Polymer</ListItem>
+                        <ListItem>Meteor</ListItem>
+                        <ListItem>Ember</ListItem>
+                    </Appear>
+                </List>
+            </Fill>
+            <Fill>
+                <List margin="50px 0">
+                    <Appear fid="2">
+                        <ListItem>
+                            and ... <Text textColor="tertiary">Re?act(ive)?</Text>
+                        </ListItem>
+                    </Appear>
+                </List>
+            </Fill>
+        </Layout>
+    </Slide>
+
+    <Slide transition={['zoom']} bgColor="black">
+        <Image src={images.notAgain.replace('/','')} margin="0px auto 40px" height="293px"/>
+    </Slide>
+
+    <Slide transition={['zoom', 'fade']} bgColor="black">
+        <Heading size={1} fit textColor="primary" textFont="secondary">
+            {"For good's sake !"}
+        </Heading>
+    </Slide>
+
+    <Slide>
+        <Heading size={1} fit>
+            Ractive and React: what they both have
+        </Heading>
+        <List margin="50px 0">
+            <ListItem>Components</ListItem>
+            <ListItem>Partial DOM update</ListItem>
+            <ListItem>High performance (re)rendering</ListItem>
+        </List>
+    </Slide>
+
+    <Slide transition={['slide']}>
+        <Heading size={5} margin="0 0 60px 0">Ractive pros & cons</Heading>
+        <Layout>
+            <Fill>
+                <List textColor="tertiary">
+                    <ListItem>Fast to master</ListItem>
+                    <ListItem>Very performant</ListItem>
+                    <ListItem>
+                        Templates fit well with<br/>
+                        our current design
+                    </ListItem>
+                </List>
+            </Fill>
+            <Fill>
+                <List>
+                    <ListItem>Not designed to make isolated components outofdabox</ListItem>
+                    <ListItem>Small community</ListItem>
+                </List>
+            </Fill>
+        </Layout>
+    </Slide>
+
+    <Slide>
+        <CodePane
+            lang="html"
+            source={require("raw!./ractive-demo.html")}/>
+    </Slide>
+
+    <Slide>
+        <CodePane
+            lang="js"
+            source={require("raw!./ractive-demo.jsdemo")}
+            margin="-80px 0 0 0" />
+    </Slide>
+
+    <Slide>
+        <RactiveDemo />
+    </Slide>
+
+    <Slide transition={['slide']}>
+        <Heading size={5} margin="0 0 60px 0">React pros & cons</Heading>
+        <Layout>
+            <Fill>
+                <List textColor="tertiary">
+                    <ListItem>Components as classes</ListItem>
+                    <ListItem>No access to parents</ListItem>
+                    <ListItem>
+                        Declarative view<br/>
+                        => definition is always valid
+                    </ListItem>
+                    <ListItem>
+                        Testabilty - 100% JS view<br/>
+                        ( => + No template parsing )
+                    </ListItem>
+                </List>
+            </Fill>
+            <Fill>
+                <List>
+                    <ListItem>Harder to learn for Web/JS beginners</ListItem>
+                    <ListItem>
+                        Writing JSX is a bit more verbose than HTML<br/>
+                        (but not so much with coffee ☺)
+                    </ListItem>
+                </List>
+            </Fill>
+        </Layout>
+    </Slide>
+    <Slide transition={['fade']} bgColor="black">
+        <BlockQuote>
+            <Quote>Templates separate technologies, not concerns.</Quote>
+        </BlockQuote>
     </Slide>
 </Deck>
     );
