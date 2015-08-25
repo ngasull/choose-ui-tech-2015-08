@@ -1,0 +1,21 @@
+var Main = React.createClass({
+
+    getInitialState: function() {
+        return {
+            text: 'Mention'
+        }
+    },
+
+    render: function() {
+        return (
+            <div>
+                <p>Welcome { this.state.text }!</p>
+                <Component text={ this.state.text } handleText={ this.handleNewUsername }/>
+            </div>
+        )
+    },
+
+    handleNewUsername: function (username) {
+        this.setState({ text:  username })
+    }
+});

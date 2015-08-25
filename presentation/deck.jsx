@@ -8,6 +8,7 @@ import {
 import preloader from "../src/utils/preloader";
 
 import RactiveDemo from "./ractive-demo.jsx";
+import ReactDemo from "./react-demo.jsx";
 
 const images = {
   notAgain: require("./notAgain.gif"),
@@ -321,6 +322,23 @@ export default class extends React.Component {
             </Fill>
         </Layout>
     </Slide>
+
+    <Slide>
+        <CodePane
+            lang="js"
+            source={require("raw!./react-demo-main.jsdemo")} />
+    </Slide>
+
+    <Slide>
+        <CodePane
+            lang="js"
+            source={require("raw!./react-demo-component.jsdemo")} />
+    </Slide>
+
+    <Slide>
+        <ReactDemo />
+    </Slide>
+
     <Slide transition={['fade']} bgColor="black">
         <BlockQuote>
             <Quote>Templates separate technologies, not concerns.</Quote>
